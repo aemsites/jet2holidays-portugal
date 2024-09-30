@@ -1,9 +1,10 @@
-# Your Project's Title...
-Your project's description...
+# Jet2 Holiday's Portugal Site
+
+AEM site for Jet2 Holiday's Portugal.
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--jet2holidays-portugal--aemsites.aem.page/
+- Live: https://main--jet2holidays-portugal--aemsites.aem.live/
 
 ## Installation
 
