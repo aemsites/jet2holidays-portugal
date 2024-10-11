@@ -7,17 +7,23 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     const anchor = document.createElement('a');
+    anchor.className = 'simple-cards-card-anchor';
     anchor.href = '#';
     const figure = document.createElement('figure');
-    figure.className = 'cards-card-figure';
+    figure.className = 'simple-cards-card-figure';
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) {
-        div.className = 'figure-image';
-        figure.append(div);
+        const image = div.querySelector('picture');
+        image.className = 'figure-image';
+        figure.append(image);
       } else if (div.children.length === 1 && div.querySelector('p')) {
-        div.className = 'figure-image-overlay';
-        figure.append(div);
-      } else div.className = 'cards-card-body';
+        const figCaption = document.createElement('figcaption');
+        figCaption.textContent = div.querySelector('p').querySelector('strong').querySelector('a').title;
+        figCaption.className = 'figure-image-overlay';
+        anchor.href = div.querySelector('p').querySelector('strong').querySelector('a').href;
+        figure.append(figCaption);
+      }
+      div.remove();
     });
     anchor.append(figure);
     li.append(anchor);
