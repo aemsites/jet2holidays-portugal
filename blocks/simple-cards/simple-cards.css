@@ -1,13 +1,23 @@
 .simple-cards {
-    margin: 0 auto;
-    max-width: 1400px;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
-.simple-cards > ul {
+.simple-cards .simple-cards-grid-regions {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  column-gap: 12px;
+  max-width: 100%;
+}
+
+.simple-cards .simple-cards-grid-activities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 12px;
   max-width: 100%;
 }
@@ -19,7 +29,7 @@
   margin-bottom: 12px;
 }
 
-.simple-cards-card-figure {
+.simple-cards .simple-cards-card-figure {
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -30,10 +40,13 @@
   box-sizing: border-box;
 }
 
-.simple-cards-card-figure img {
-    display: block;
+.simple-cards .simple-cards-card-figure img {
+  display: block;
 }
 
+.simple-cards .simple-cards-grid-activities picture {
+    filter: brightness(0.7);
+}
 
 .simple-cards .figure-image-overlay {
   position: absolute;
@@ -47,41 +60,56 @@
   text-shadow: 1px 2px 2px #666;
   color: #fff;
   z-index: 1;
+  width: 100%;
 }
 
-@media (width >= 1400px) {
-    .simple-cards > ul > li img {
-        height: 193px;
-        object-fit: cover;
-        width: 100%;
-    }
+.simple-cards .figure-span-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.simple-cards .figure-span-overlay-icon {
+  width: 45px;
+  height: 45px;
 }
 
 @media (width >= 768px) {
-    .simple-cards .figure-image-overlay {
-        font-size: 24px;
-        width: 100%;
-    }
+  .simple-cards .figure-image-overlay {
+     font-size: 24px;
+     width: 100%;
+  }
 
-    .simple-cards > ul > li img {
-        aspect-ratio: 1.8;
-        width: 100%;
-        object-fit: cover;
-    }
+  .simple-cards .figure-span-overlay-text {
+     font-size: 19px;
+  }
 
-    .simple-cards > ul > li {
-        width: 33.3333%;
-    }
+  .simple-cards > ul > li img {
+     aspect-ratio: 1.8;
+     width: 100%;
+     object-fit: cover;
+  }
 }
 
 @media (width < 768px) {
-    .simple-cards > ul > li img {
-        width: 100%;
-        height: 193px;
-        object-fit: cover;
-    }
+  .simple-cards > ul > li img {
+     width: 100%;
+     height: 193px;
+     object-fit: cover;
+  }
 
-    .simple-cards > ul {
-        display: block;
+  .simple-cards .simple-cards-grid-regions {
+     display: block;
+  }
+
+  .simple-cards .simple-cards-grid-activities {
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media (width < 465px) {
+    .simple-cards .simple-cards-grid-activities > li > a > figure {
+        aspect-ratio: 1;
     }
 }
