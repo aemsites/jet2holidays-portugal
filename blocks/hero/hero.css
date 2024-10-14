@@ -4,141 +4,96 @@
     max-height: 300px;
 }
 
-.hero.block {
+.hero {
     position: relative;
     padding: 10px 0;
+    min-height: 300px;
     color: white;
     font-size: 1em;
-
-    & .title {
-        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-        font-size: 28px;
-        font-family: var(--heading-font-family);
-        font-weight: 900;
-        font-style: italic;
-        line-height: 1;
-    }
-
-    & .grid-container {
-        display: flex;
-        min-height: 280px;
-        margin: auto;
-        align-items: center;
-
-        & .column {
-            flex: 1;
-            padding: 10px;
-            position: relative;
-            height: auto;
-
-            & .discount-circle {
-                border-radius: 50%;
-                background-color: #ee3123;
-                border: 5px solid white;
-                font-size: 14px;
-                text-align: center;
-                line-height: 1.1em;
-                font-family: "Open Sans", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 600;
-                font-style: normal;
-                float: right;
-
-                & sup {
-                    font-size: 26px;
-                }
-
-                & p {
-                    margin-top: 0;
-                }
-
-                & sub {
-                    font-size: 9px;
-                }
-            }
-
-            & .discount-circle-size {
-                width: 130px;
-                height: 130px;
-                padding-top: 10px;
-            }
-        }
-    }
-
-    img {
-        object-fit: cover;
-        object-position: 50%;
-        width: 100%;
-        height: 100%;
-    }
-
-    picture {
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        object-fit: cover;
-        object-position: 50%;
-        box-sizing: border-box;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: cover;
-        background-color: #388ce1;
-    }
 }
 
-@media (width >= 900px) {
-    .hero.block {
-        position: relative;
-        padding: 40px 24px;
-        min-height: 300px;
-        color: white;
-        font-size: 1em;
+.hero .hero-text {
+    text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+    font-size: 1.5em !important;
+    font-family: franklin-heavy-italic, sans-serif;
+    line-height: 1;
+}
 
-        & .title {
-            text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-            font-family: var(--heading-font-family);
-            font-weight: 900;
-            font-style: italic;
-            line-height: 1;
-            font-size: 1.65em;
-        }
+.hero .discount {
+    font-size: 26px;
+}
 
-        & .grid-container {
-            display: flex;
-            max-width: 920px;
-            min-height: 420px;
-            margin: auto;
-            align-items: center;
+.hero .grid-container .column .discount-circle {
+    border-radius: 50%;
+    background-color: red;
+    border: 5px solid white;
+    font-size: 14px !important;
+    text-align: center !important;
+    line-height: 1.1em !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    padding-top: 10px;
+    float: right !important;
+}
 
-            & .column {
-                & .discount-circle {
-                    & sup {
-                        font-size: 44px;
-                    }
+.hero .grid-container .column .discount-circle-size {
+    width: 130px;
+    height: 130px;
+    padding-top: 10px;
+}
 
-                    & sub {
-                        font-size: 12px;
-                        margin-top: 0;
-                    }
+.hero .grid-container .column .discount-circle p {
+    margin-top: 0 !important;
+}
 
-                    & p {
-                        margin-top: 0;
-                    }
+.hero .grid-container .column .tandc {
+    font-size: 9px;
+}
 
-                    & p:nth-last-child(2) {
-                        margin-bottom: 0;
-                    }
-                }
+.hero .grid-container {
+    display: flex;
+    min-height: 280px !important;
+    margin: auto;
+    align-items: center;
+}
 
-                & .discount-circle-size {
-                    width: 200px;
-                    height: 200px;
-                    padding-top: 25px;
-                    font-size: 20px;
-                }
-            }
-        }
+.hero .grid-container .column {
+    flex: 1;
+    padding: 10px;
+    position: relative;
+    height: auto;
+}
+
+.hero picture {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    object-fit: cover;
+    object-position: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-color: #388ce1;
+}
+
+.hero img {
+    object-fit: cover;
+    object-position: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+@media (width >=900px) {
+    .hero .grid-container {
+        display: flex;
+        max-width: 920px;
+        min-height: 420px !important;
+        margin: auto;
+        align-items: center;
     }
 
     .hero-container .hero-wrapper {
@@ -147,4 +102,65 @@
         max-height: 500px;
     }
 
+<<<<<<< HEAD
+=======
+    .hero {
+        position: relative;
+        padding: 40px 24px;
+        min-height: 300px;
+        color: white;
+        font-size: 1em;
+    }
+
+    .hero .grid-container .column .discount-circle-size {
+        width: 160px;
+        height: 160px;
+        padding-top: 14px;
+        font-size: 18px !important;
+    }
+
+    .hero .discount {
+        font-size: 28px;
+    }
+
+
+    .hero .hero-text {
+        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+        font-size: 2em !important;
+        font-family: franklin-heavy-italic, sans-serif;
+        line-height: 1;
+    }
+
+    .hero .grid-container .column .tandc {
+        font-size: 10px;
+    }
+
+}
+
+
+@media (width >=1200px) {
+    .hero .grid-container .column .discount-circle-size {
+        width: 200px;
+        height: 200px;
+        padding-top: 14px;
+        font-size: 26px !important;
+    }
+
+    .hero .discount {
+        font-size: 36px;
+    }
+
+    .hero .hero-text {
+        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+        font-size: 3em !important;
+        font-family: franklin-heavy-italic, sans-serif;
+        line-height: 1;
+    }
+
+    .hero .grid-container .column .tandc {
+        font-size: 14px;
+        margin-top: 0 !important;
+    }
+
+>>>>>>> 722c17a (fix lint errors)
 }
