@@ -14,6 +14,8 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) { // simple cards image
         const image = div.querySelector('picture');
+        // image.width = '600';
+        // image.height = '400';
         image.className = 'figure-image';
         figure.append(image);
       } else if (div.children.length === 1 && div.querySelector('p')) { // simple cards overlay with no icons
