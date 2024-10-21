@@ -41,13 +41,13 @@ export default function decorate(block) {
         const figCaptionWithIcon = document.createElement('figcaption');
         const figCaptionSpan = document.createElement('span');
         const activityDiv = document.createElement('div');
-        const iconImage = div.querySelectorAll('p')[1].querySelector('strong').querySelector('span').querySelector('img');
+        const iconImage = div.querySelectorAll('p')[0].querySelector('strong').querySelector('span').querySelector('img');
         iconImage.height = 45;
         iconImage.width = 45;
-        anchor.href = div.querySelectorAll('p')[0].querySelector('strong').querySelector('a').href;
+        anchor.href = div.querySelectorAll('p')[1].querySelector('strong').querySelector('a').href;
         iconImage.className = 'figure-span-overlay-icon';
         ul.className = 'simple-cards-grid-activities';
-        activityDiv.textContent = div.querySelectorAll('p')[0].querySelector('strong').querySelector('a').title;
+        activityDiv.textContent = div.querySelectorAll('p')[1].querySelector('strong').querySelector('a').title;
         activityDiv.className = 'figure-span-overlay-text';
         figCaptionSpan.className = 'figure-span-overlay';
         figCaptionSpan.append(iconImage);
