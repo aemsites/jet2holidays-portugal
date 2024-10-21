@@ -42,6 +42,8 @@ export default function decorate(block) {
         const figCaptionSpan = document.createElement('span');
         const activityDiv = document.createElement('div');
         const iconImage = div.querySelectorAll('p')[1].querySelector('strong').querySelector('span').querySelector('img');
+        iconImage.height = 45;
+        iconImage.width = 45;
         anchor.href = div.querySelectorAll('p')[0].querySelector('strong').querySelector('a').href;
         iconImage.className = 'figure-span-overlay-icon';
         ul.className = 'simple-cards-grid-activities';
@@ -59,7 +61,12 @@ export default function decorate(block) {
     li.append(anchor);
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedImg = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    const imgElement = optimizedImg.querySelector('img');
+    imgElement.height = 400;
+    img.closest('picture').replaceWith(optimizedImg);
+  });
   block.textContent = '';
   block.append(ul);
 }
