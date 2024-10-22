@@ -4,96 +4,138 @@
     max-height: 300px;
 }
 
-.hero {
+.hero.block {
     position: relative;
     padding: 10px 0;
     min-height: 300px;
     color: white;
     font-size: 1em;
-}
 
-.hero .hero-text {
-    text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-    font-size: 1.5em !important;
-    font-family: franklin-heavy-italic, sans-serif;
-    line-height: 1;
-}
+    & .title {
+        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+        font-size: 1.5em;
+        font-family: franklin-heavy-italic, sans-serif;
+        line-height: 1;
+    }
 
-.hero .discount {
-    font-size: 26px;
-}
+    & .grid-container {
+        display: flex;
+        min-height: 280px;
+        margin: auto;
+        align-items: center;
 
-.hero .grid-container .column .discount-circle {
-    border-radius: 50%;
-    background-color: red;
-    border: 5px solid white;
-    font-size: 14px !important;
-    text-align: center !important;
-    line-height: 1.1em !important;
-    font-family: "Open Sans", sans-serif !important;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    padding-top: 10px;
-    float: right !important;
-}
+        & .column {
+            flex: 1;
+            padding: 10px;
+            position: relative;
+            height: auto;
 
-.hero .grid-container .column .discount-circle-size {
-    width: 130px;
-    height: 130px;
-    padding-top: 10px;
-}
+            & .discount-circle {
+                border-radius: 50%;
+                background-color: red;
+                border: 5px solid white;
+                font-size: 14px;
+                text-align: center;
+                line-height: 1.1em;
+                font-family: "Open Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 600;
+                font-style: normal;
+                float: right;
 
-.hero .grid-container .column .discount-circle p {
-    margin-top: 0 !important;
-}
+                & sup {
+                    font-size: 26px;
+                }
 
-.hero .grid-container .column .tandc {
-    font-size: 9px;
-}
+                & p {
+                    margin-top: 0;
+                }
 
-.hero .grid-container {
-    display: flex;
-    min-height: 280px !important;
-    margin: auto;
-    align-items: center;
-}
+                & sub {
+                    font-size: 9px;
+                }
+            }
 
-.hero .grid-container .column {
-    flex: 1;
-    padding: 10px;
-    position: relative;
-    height: auto;
-}
+            & .discount-circle-size {
+                width: 130px;
+                height: 130px;
+                padding-top: 10px;
+            }
+        }
+    }
 
-.hero picture {
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    object-fit: cover;
-    object-position: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-color: #388ce1;
-}
+    img {
+        object-fit: cover;
+        object-position: 50%;
+        width: 100%;
+        height: 100%;
+    }
 
-.hero img {
-    object-fit: cover;
-    object-position: 50%;
-    width: 100%;
-    height: 100%;
+    picture {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        object-fit: cover;
+        object-position: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-color: #388ce1;
+    }
 }
 
 @media (width >=900px) {
-    .hero .grid-container {
-        display: flex;
-        max-width: 920px;
-        min-height: 420px !important;
-        margin: auto;
-        align-items: center;
+    .hero.block {
+        position: relative;
+        padding: 40px 24px;
+        min-height: 300px;
+        color: white;
+        font-size: 1em;
+
+        & .title {
+            text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+            font-size: 2em;
+            font-family: franklin-heavy-italic, sans-serif;
+            line-height: 1;
+        }
+
+        & .grid-container {
+            display: flex;
+            max-width: 920px;
+            min-height: 420px;
+            margin: auto;
+            align-items: center;
+
+            & .column {
+                & .discount-circle {
+                    & sup {
+                        font-size: 44px;
+                    }
+
+                    & sub {
+                        font-size: 12px;
+                        margin-top: 0;
+                    }
+
+                    & p {
+                        margin-top: 0;
+                    }
+
+                    & p:nth-last-child(2) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                & .discount-circle-size {
+                    width: 160px;
+                    height: 160px;
+                    padding-top: 14px;
+                    font-size: 18px;
+                }
+            }
+        }
     }
 
     .hero-container .hero-wrapper {
@@ -102,8 +144,6 @@
         max-height: 500px;
     }
 
-<<<<<<< HEAD
-=======
     .hero {
         position: relative;
         padding: 40px 24px;
@@ -136,31 +176,25 @@
     }
 
 }
-
-
 @media (width >=1200px) {
-    .hero .grid-container .column .discount-circle-size {
-        width: 200px;
-        height: 200px;
-        padding-top: 14px;
-        font-size: 26px !important;
+    .hero.block {
+        & .grid-container {
+            & .column {
+                & .discount-circle-size {
+                    width: 200px;
+                    height: 200px;
+                    font-size: 20px;
+                    padding-top: 25px;
+                }
+            }
+        }
+
+        & .title {
+            text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+            font-size: 3em;
+            font-family: franklin-heavy-italic, sans-serif;
+            line-height: 1;
+        }
     }
 
-    .hero .discount {
-        font-size: 36px;
-    }
-
-    .hero .hero-text {
-        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-        font-size: 3em !important;
-        font-family: franklin-heavy-italic, sans-serif;
-        line-height: 1;
-    }
-
-    .hero .grid-container .column .tandc {
-        font-size: 14px;
-        margin-top: 0 !important;
-    }
-
->>>>>>> 722c17a (fix lint errors)
 }
