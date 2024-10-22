@@ -257,3 +257,34 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.blue-section {
+    padding: 20px;
+    background-color: #388ce1;
+    color: white;
+    text-align: center;
+    & h4 {
+        font-family: franklin-heavy-italic, sans-serif;
+        font-size: 1.625rem;
+        margin: 0;
+    }
+    & p {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 0 0 20px;
+        & a {
+            color: white;
+            text-decoration: underline;
+            font-style: italic;
+            font-family: 'Open Sans', sans-serif !important;
+        }
+    }
+}
+
+@media (width >= 1200px) {
+    .blue-section {
+        text-align: left;
+        padding: 40px;
+    }
+  }
