@@ -1,5 +1,5 @@
 import {
-  div, domEl, p, a, img,
+  div, domEl, p, a, img, h4,
 } from '../../scripts/dom-helpers.js';
 
 export default async function decorate(block) {
@@ -16,26 +16,36 @@ export default async function decorate(block) {
     }
 
     const resortPicture = row.children[0].querySelector('picture');
-    const resortTitle = row.children[1];
     const resortDescription = row.children[2];
-    const viewMapLink = row.children[3].querySelector('p').querySelector('a').href;
-    const viewMapTitle = row.children[3].querySelector('p').querySelector('a').title;
-    const viewAccommodationsLink = row.children[4].querySelector('p').querySelector('a').href;
-    const viewAccommodationsTitle = row.children[4].querySelector('p').querySelector('a').title;
+
+    const {
+      href: resortLink,
+      title: resortTitle,
+    } = row.children[1].querySelector('h4').querySelector('a');
+
+    const {
+      href: viewMapLink,
+      title: viewMapTitle,
+    } = row.children[3].querySelector('p').querySelector('a');
+
+    const {
+      href: viewAccommodationsLink,
+      title: viewAccommodationsTitle,
+    } = row.children[4].querySelector('p').querySelector('a');
 
     const il = domEl(
       'li',
       div(
         { class: 'main-resort-card' },
-        a(
-          { href: '#' },
-          resortPicture,
-        ),
+        a({ href: resortLink }, resortPicture),
         div(
           { class: 'resort-card-subsection' },
           div(
             { class: 'resort-details' },
-            a({ class: 'resort-title', href: '#' }, resortTitle),
+            h4(
+              { class: 'resort-title' },
+              a({ href: resortLink }, resortTitle),
+            ),
             p(resortDescription),
           ),
         ),
@@ -49,7 +59,7 @@ export default async function decorate(block) {
           div(
             { class: 'view-accommodations-button' },
             a(
-              { class: 'view-map-button', href: viewAccommodationsLink },
+              { href: viewAccommodationsLink },
               viewAccommodationsTitle,
               img({ class: 'chevron-right', src: chevronRight, alt: 'Chevron Right' }),
             ),

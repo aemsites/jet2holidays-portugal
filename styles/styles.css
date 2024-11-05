@@ -13,14 +13,59 @@
 @import url('reset.css');
 
 :root {
-  /* colors */
+    /* colors */
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+    /* fonts */
+    --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
+    --heading-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
 
-  /* nav height */
-  --nav-height: 64px;
+    /* nav height */
+    --nav-height: 64px;
+}
+
+/* fallback fonts */
+@font-face {
+    font-family: 'Franklin Fallback';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Arial Bold Italic');
+    ascent-override: 92.56%;
+    descent-override: 27.21%;
+    line-gap-override: 0.00%;
+    size-adjust: 99.07%;
+}
+
+@font-face {
+    font-family: 'Franklin Fallback';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Arial Italic');
+    ascent-override: 89.74%;
+    descent-override: 27.11%;
+    line-gap-override: 0.00%;
+    size-adjust: 99.41%;
+}
+
+@font-face {
+    font-family: 'Franklin Fallback';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Arial Italic');
+    ascent-override: 91.31%;
+    descent-override: 27.62%;
+    line-gap-override: 0.00%;
+    size-adjust: 97.59%;
+}
+
+@font-face {
+    font-family: 'Franklin Fallback';
+    font-style: italic;
+    font-weight: 900;
+    src: local('Arial Bold Italic');
+    ascent-override: 96.23%;
+    descent-override: 25.86%;
+    line-gap-override: 0.00%;
+    size-adjust: 98.74%;
 }
 
 @media (width >= 900px) {
@@ -66,7 +111,8 @@ h1 {
     font-style: italic;
     font-size: 60px;
     line-height: 1;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+}
 
 h2 {
     font-family: Franklin, sans-serif;
@@ -75,7 +121,8 @@ h2 {
     font-size: 28px;
     line-height: 1.64;
     margin-bottom: 0.5em;
-    color: #463f36; }
+    color: #463f36;
+}
 
 h3 {
     font-family: Franklin, sans-serif;
@@ -92,7 +139,8 @@ h4 {
     font-style: italic;
     font-size: 24px;
     line-height: 1;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+}
 
 h5 {
     font-family: Franklin, sans-serif;

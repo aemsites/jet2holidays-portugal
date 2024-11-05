@@ -1,11 +1,4 @@
 @font-face {
-    font-family: OpenSans;
-    src: url('../fonts/opensans-regular-webfont.woff2') format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
     font-family: Franklin;
     src: url('../fonts/franklin-medium-italic-webfont.woff2') format("woff2");
     font-weight: 300;

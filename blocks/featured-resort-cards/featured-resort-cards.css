@@ -35,7 +35,6 @@
 
             & p {
                 font-size: 13px;
-                font-family: OpenSans, sans-serif;
                 font-weight: 400;
                 margin: 0;
                 color: #444;
@@ -43,9 +42,9 @@
             }
         }
 
-        .resort-title > div > h4 {
+        .resort-title {
             font-size: 16px;
-            font-family: Franklin, sans-serif;
+            font-family: Franklin, 'Franklin Fallback', sans-serif;
             font-weight: 900;
             font-style: italic;
             color: #3d8ede;
@@ -67,8 +66,14 @@
                 color: #fff;
                 padding: 6px 12px;
                 margin-right: -14px;
+                margin-top: -12px;
                 display: flex;
                 flex-direction: row;
+                align-items: center;
+                font-family: Franklin, 'Franklin Fallback', sans-serif;
+                font-weight: 300;
+                font-style: italic;
+                font-size: 13px;
             }
         }
 
@@ -80,7 +85,6 @@
             align-items: center;
             margin-top: -12px;
             color: #0f61e6;
-            font-family: OpenSans, sans-serif;
             font-weight: 400;
             font-style: normal;
         }
@@ -98,7 +102,7 @@
     }
 }
 
-@media (width <= 1023px) {
+@media (width <= 900px) {
     .featured-resort-cards {
         .resorts-grid-section {
             list-style: none;
@@ -113,7 +117,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (width <= 600px) {
     .featured-resort-cards {
         .resorts-grid-section {
             list-style: none;
@@ -127,8 +131,8 @@
 
         & img {
             width: 100%;
-            height: auto;
-            aspect-ratio: 5 / 2;
+            height: 220px;
+            aspect-ratio: auto;
         }
     }
 }
