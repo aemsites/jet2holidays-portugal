@@ -16,10 +16,8 @@
     /* colors */
 
     /* fonts */
-
-    /* --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif; */
-
-    /* --heading-font-family: 'Franklin', 'Franklin Fallback', sans-serif; */
+    --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
+    --heading-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
 
     /* nav height */
     --nav-height: 64px;

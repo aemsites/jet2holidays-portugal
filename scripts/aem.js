@@ -274,7 +274,6 @@ function getMetadata(name, doc = document) {
  * @param {string} [alt] The image alternative text
  * @param {boolean} [eager] Set loading attribute to eager
  * @param {Array} [breakpoints] Breakpoints and corresponding params (eg. width)
- * @param {string} height Default height of the image
  * @returns {Element} The picture element
  */
 function createOptimizedPicture(
@@ -282,7 +281,6 @@ function createOptimizedPicture(
   alt = '',
   eager = false,
   breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
-  height = '400',
 ) {
   const url = new URL(src, window.location.href);
   const picture = document.createElement('picture');
@@ -295,7 +293,6 @@ function createOptimizedPicture(
     if (br.media) source.setAttribute('media', br.media);
     source.setAttribute('type', 'image/webp');
     source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);
-    source.setAttribute('height', height);
     picture.appendChild(source);
   });
 
@@ -305,14 +302,11 @@ function createOptimizedPicture(
       const source = document.createElement('source');
       if (br.media) source.setAttribute('media', br.media);
       source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
-      source.setAttribute('height', height);
       picture.appendChild(source);
     } else {
       const img = document.createElement('img');
       img.setAttribute('loading', eager ? 'eager' : 'lazy');
       img.setAttribute('alt', alt);
-      img.setAttribute('height', height);
-      img.setAttribute('width', br.width);
       picture.appendChild(img);
       img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
     }
