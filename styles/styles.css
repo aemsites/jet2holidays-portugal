@@ -21,6 +21,13 @@
 
     /* nav height */
     --nav-height: 64px;
+
+    /* heading sizes */
+    --heading-font-size-xl: 60px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 22px;
+    --heading-font-size-xs: 18px;
 }
 
 /* fallback fonts */
@@ -83,6 +90,7 @@ body {
     line-height: 1.44;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
     font-weight: 900;
 }
 
@@ -102,50 +110,38 @@ h5 {
     margin: 0;
     padding: 0;
     letter-spacing: 0;
-}
-
-h1 {
     font-family: Franklin, sans-serif;
     font-weight: 900;
     font-style: italic;
-    font-size: 60px;
+}
+
+h1 {
+    font-size: var(--heading-font-size-xl);
     line-height: 1;
     margin-bottom: 0.5em;
 }
 
 h2 {
-    font-family: Franklin, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 28px;
+    font-size: var(--heading-font-size-l);
     line-height: 1.64;
     margin-bottom: 0.5em;
     color: #463f36;
 }
 
 h3 {
-    font-family: Franklin, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 22px;
+    font-size: var(--heading-font-size-s);
     line-height: 1.3;
     color: #525f6a;
 }
 
 h4 {
-    font-family: Franklin, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 24px;
+    font-size: var(--heading-font-size-m);
     line-height: 1;
     margin-bottom: 0.5em;
 }
 
 h5 {
-    font-family: Franklin, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 18px;
+    font-size: var(--heading-font-size-xs);
     line-height: 1;
 }
 
