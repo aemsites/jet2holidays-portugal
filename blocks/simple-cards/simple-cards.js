@@ -1,72 +1,57 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import {
+  div, domEl, a, span,
+} from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('ul');
+  const dom = domEl('ul');
+
   [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    const anchor = document.createElement('a');
-    const figure = document.createElement('figure');
+    const cardPicture = row.children[0].querySelector('picture');
 
-    anchor.className = 'simple-cards-card-anchor';
-    anchor.href = '#';
-    figure.className = 'simple-cards-card-figure';
+    if (row.children[1].querySelectorAll('p').length === 1) { /* simple cards overlay with no icons */
+      dom.className = 'simple-cards-grid-regions';
+      const cardCaption = row.children[1].querySelector('p').querySelector('strong').querySelector('a');
 
-    while (row.firstElementChild) li.append(row.firstElementChild);
+      const li = domEl(
+        'li',
+        div(
+          { class: 'card-figure' },
+          a(
+            { class: 'card-image', href: cardCaption.href },
+            cardPicture,
+            div(
+              { class: 'card-figure-overlay' },
+              span({ class: 'card-caption' }, cardCaption.title),
+            ),
+          ),
+        ),
+      );
 
-    [...li.children].forEach((div) => {
-      /* simple cards image */
-      if (div.children.length === 1 && div.querySelector('picture')) {
-        const image = div.querySelector('picture');
-        image.className = 'figure-image';
-        figure.append(image);
-        div.remove();
-        return;
-      }
+      dom.append(li);
+    } else if (row.children[1].querySelectorAll('p').length === 2) { /* simple cards overlay cards with icons */
+      dom.className = 'simple-cards-grid-activities';
+      const cardCaption = row.children[1].querySelectorAll('p')[1].querySelector('strong').querySelector('a');
+      const cardIcon = row.children[1].querySelectorAll('p')[0].querySelector('strong').querySelector('img');
 
-      /* simple cards overlay with no icons */
-      if (div.children.length === 1 && div.querySelector('p')) {
-        const figCaption = document.createElement('figcaption');
-        anchor.href = div.querySelector('p').querySelector('strong').querySelector('a').href;
-        figCaption.textContent = div.querySelector('p').querySelector('strong').querySelector('a').title;
-        figCaption.className = 'figure-image-overlay';
-        ul.className = 'simple-cards-grid-regions';
-        figure.append(figCaption);
-        div.remove();
-        return;
-      }
+      const li = domEl(
+        'li',
+        div(
+          { class: 'card-figure' },
+          a(
+            { class: 'card-image-activities', href: cardCaption.href },
+            cardPicture,
+            div(
+              { class: 'card-figure-overlay' },
+              span({ class: 'card-icon' }, cardIcon),
+              span({ class: 'card-caption-with-icon' }, cardCaption.title),
+            ),
+          ),
+        ),
+      );
 
-      /* simple cards overlay cards with icons */
-      if (div.querySelectorAll('p').length === 2) {
-        const figCaptionWithIcon = document.createElement('figcaption');
-        const figCaptionSpan = document.createElement('span');
-        const activityDiv = document.createElement('div');
-        const iconImage = div.querySelectorAll('p')[0].querySelector('strong').querySelector('span').querySelector('img');
-        iconImage.height = 45;
-        iconImage.width = 45;
-        anchor.href = div.querySelectorAll('p')[1].querySelector('strong').querySelector('a').href;
-        iconImage.className = 'figure-span-overlay-icon';
-        ul.className = 'simple-cards-grid-activities';
-        activityDiv.textContent = div.querySelectorAll('p')[1].querySelector('strong').querySelector('a').title;
-        activityDiv.className = 'figure-span-overlay-text';
-        figCaptionSpan.className = 'figure-span-overlay';
-        figCaptionSpan.append(iconImage);
-        figCaptionSpan.append(activityDiv);
-        figCaptionWithIcon.append(figCaptionSpan);
-        figCaptionWithIcon.className = 'figure-image-overlay'; figure.append(figCaptionWithIcon);
-        div.remove();
-      }
-    });
-    anchor.append(figure);
-    li.append(anchor);
-    ul.append(li);
+      dom.append(li);
+    }
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedImg = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    const imgElement = optimizedImg.querySelector('img');
-    imgElement.height = 400;
-    img.closest('picture').replaceWith(optimizedImg);
-  });
-  block.textContent = '';
-  block.append(ul);
+
+  block.replaceChildren(dom);
 }
