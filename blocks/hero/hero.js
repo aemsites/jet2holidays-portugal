@@ -5,11 +5,11 @@ import {
 export default async function decorate(block) {
   const rows = [...block.children];
 
-  const heroProperties = {};
+  let heroProperties = {};
 
   rows.forEach((row) => {
     const fieldName = row.children[0].innerText;
-    heroProperties[fieldName] = { ...heroProperties, [fieldName]: row.children[1] };
+    heroProperties = { ...heroProperties, [fieldName]: row.children[1] };
   });
 
   const dom = domEl(
