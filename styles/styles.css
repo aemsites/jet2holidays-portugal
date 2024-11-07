@@ -13,7 +13,15 @@
 @import url('reset.css');
 
 :root {
-    /* colors */
+  /* colors */
+  --background-color: white;
+  --light-color: #f8f8f8;
+  --dark-color: #505050;
+  --text-color: #131313;
+  --link-color: #3b63fb;
+  --link-hover-color: #1d3ecf;
+  --blue-background-color: #388ce1;
+  --blue-background-text-color: white;
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -183,3 +191,37 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.blue-section {
+    padding: 20px;
+    background-color: var(--blue-background-color);
+    color: var(--blue-background-text-color);
+    text-align: center;
+
+    & h4 {
+        font-family: franklin-heavy-italic, sans-serif;
+        font-size: 1.625rem;
+        margin: 0;
+    }
+
+    & p {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 0 0 20px;
+        
+        & a {
+            color: var(--blue-background-text-color);
+            text-decoration: underline;
+            font-style: italic;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+}
+
+@media (width >= 1200px) {
+    .blue-section {
+        text-align: left;
+        padding: 40px;
+    }
+  }
