@@ -1,0 +1,138 @@
+.featured-resort-cards {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 15px;
+
+    .resorts-grid-section {
+        list-style: none;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1400px;
+
+        .main-resort-card {
+            width: 100%;
+            height: 100%;
+            padding: 0 6px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+
+            & img {
+                display: block;
+                object-fit: cover;
+            }
+        }
+
+        .resort-card-subsection {
+            border: 1px solid #d1d3d6;
+            height: 100%;
+        }
+
+        .resort-details {
+            padding: 12px 12px 48px;
+
+            & p {
+                font-size: 13px;
+                font-weight: 400;
+                margin: 0;
+                color: #444;
+                line-height: 1.4;
+            }
+        }
+
+        .resort-title {
+            font-size: 16px;
+            font-family: Franklin, 'Franklin Fallback', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            color: #3d8ede;
+            margin: 0 0 0.1em;
+            line-height: 1.5;
+        }
+
+        .details-footer {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 24px;
+            align-items: start;
+
+            .view-accommodations-button > a {
+                background: #388ce1;
+                color: #fff;
+                padding: 6px 12px;
+                margin-right: -14px;
+                margin-top: -12px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-family: Franklin, 'Franklin Fallback', sans-serif;
+                font-weight: 300;
+                font-style: italic;
+                font-size: 13px;
+            }
+        }
+
+        .view-map-button {
+            display: flex;
+            flex-direction: row-reverse;
+            column-gap: 5px;
+            font-size: 13px;
+            align-items: center;
+            margin-top: -12px;
+            color: #0f61e6;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .map-pin-icon {
+            width: 11px;
+            height: 11px;
+        }
+
+        .chevron-right {
+            width: 6px;
+            height: 6px;
+            margin-left: 6px;
+        }
+    }
+}
+
+@media (width <= 900px) {
+    .featured-resort-cards {
+        .resorts-grid-section {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            column-gap: 12px;
+            max-width: 100%;
+        }
+    }
+}
+
+@media (width <= 600px) {
+    .featured-resort-cards {
+        .resorts-grid-section {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 12px;
+            max-width: 100%;
+        }
+
+        & img {
+            width: 100%;
+            height: 220px;
+            aspect-ratio: auto;
+        }
+    }
+}
