@@ -1,5 +1,5 @@
 import {
-  div, domEl, p,
+  div, domEl, h1, p,
 } from '../../scripts/dom-helpers.js';
 
 export default async function decorate(block) {
@@ -19,7 +19,7 @@ export default async function decorate(block) {
       { class: 'grid-container' },
       div(
         { class: 'title column' },
-        p(
+        h1(
           { class: 'title' },
           heroProperties.Title.innerText,
         ),

@@ -12,8 +12,7 @@
     font-size: 1em;
 
     & .title {
-        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-        font-size: 1.3em;
+        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);        font-size: 28px;
         font-family: franklin-heavy-italic, sans-serif;
         line-height: 1;
     }
@@ -32,7 +31,7 @@
 
             & .discount-circle {
                 border-radius: 50%;
-                background-color: red;
+                background-color: #ee3123;
                 border: 5px solid white;
                 font-size: 14px;
                 text-align: center;
@@ -96,9 +95,9 @@
 
         & .title {
             text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-            font-size: 1.6em;
             font-family: franklin-heavy-italic, sans-serif;
             line-height: 1;
+            font-size: 1.5em;
         }
 
         & .grid-container {
@@ -129,10 +128,10 @@
                 }
 
                 & .discount-circle-size {
-                    width: 160px;
-                    height: 160px;
-                    padding-top: 14px;
-                    font-size: 18px;
+                    width: 200px;
+                    height: 200px;
+                    padding-top: 25px;
+                    font-size: 20px;
                 }
             }
         }
@@ -173,27 +172,6 @@
 
     .hero .grid-container .column .tandc {
         font-size: 10px;
-    }
-
-}
-@media (width >=1200px) {
-    .hero.block {
-        & .grid-container {
-            & .column {
-                & .discount-circle-size {
-                    width: 200px;
-                    height: 200px;
-                    font-size: 20px;
-                    padding-top: 25px;
-                }
-            }
-        }
-
-        & .title {
-            text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-            font-family: franklin-heavy-italic, sans-serif;
-            line-height: 1;
-        }
     }
 
 }
