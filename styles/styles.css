@@ -13,15 +13,17 @@
 @import url('reset.css');
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-  --blue-background-color: #388ce1;
-  --blue-background-text-color: white;
+    /* colors */
+    --background-color: white;
+    --light-color: #fff;
+    --dark-color: #505050;
+    --text-color: #131313;
+    --link-color: #3b63fb;
+    --link-hover-color: #1d3ecf;
+    --blue-background-color: #388ce1;
+    --blue-background-text-color: white;
+    --footer-links-background-color: #2b6fb1;
+
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -209,7 +211,7 @@ main .section.highlight {
         font-weight: 300;
         font-size: 1rem;
         margin: 0 0 20px;
-        
+
         & a {
             color: var(--blue-background-text-color);
             text-decoration: underline;

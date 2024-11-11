@@ -2,35 +2,16 @@ import {
   domEl, h6, h5,
 } from '../../scripts/dom-helpers.js';
 
-const changeSectionClass = (oldClass, newClass) => {
-  const elements = document.querySelectorAll(`.${oldClass}`);
-
-  elements.forEach((element) => {
-    element.classList.remove(`${oldClass}`);
-    element.classList.add(`${newClass}`);
-  });
-};
-
-const handleExpandEvent = (expandedView) => {
-  if (expandedView) {
-    changeSectionClass('invisible-section', 'visible-section');
-    changeSectionClass('expand-icon', 'collapse-icon');
-  } else {
-    changeSectionClass('visible-section', 'invisible-section');
-    changeSectionClass('collapse-icon', 'expand-icon');
-  }
-};
-
-const handleScreenResize = (expandedView) => {
+const handleScreenResize = (expandedView, parentEl) => {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 600 && expandedView === true) {
-    handleExpandEvent(false);
+    parentEl.classList.remove('open');
     return false;
   }
 
   if (screenWidth > 600 && expandedView === false) {
-    handleExpandEvent(true);
+    parentEl.classList.add('open');
     return true;
   }
 
@@ -38,14 +19,19 @@ const handleScreenResize = (expandedView) => {
 };
 
 export default async function decorate(block) {
+  const parentEl = document.querySelector('.footer-links');
+
   const dom = domEl('ul');
   dom.className = 'footer-links-grid-section';
 
   let expandedView = window.innerWidth >= 600;
+  if (expandedView) {
+    parentEl.classList.add('open');
+  }
 
   // resize screen
   window.addEventListener('resize', () => {
-    const validChange = handleScreenResize(expandedView);
+    const validChange = handleScreenResize(expandedView, parentEl);
     if (validChange !== null) {
       expandedView = validChange;
     }
@@ -69,7 +55,7 @@ export default async function decorate(block) {
 
       /* click event listener logic */
       mobileHeading.addEventListener('click', () => {
-        handleExpandEvent(expandedView);
+        parentEl.classList.toggle('open');
         expandedView = !expandedView;
       });
 
@@ -86,7 +72,7 @@ export default async function decorate(block) {
       sectionLinks,
     );
 
-    li.className = expandedView ? 'visible-section' : 'invisible-section';
+    li.className = 'footer-section';
     dom.append(li);
   });
 
