@@ -102,14 +102,14 @@
     }
 }
 
-@media (min-width: 465px) {
+@media (width >= 465px) {
     .card-image-activities > picture > img {
         aspect-ratio: 1;
         height: auto;
     }
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
     .simple-cards {
         .simple-cards-grid-regions {
             display: grid;
@@ -132,7 +132,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
     .simple-cards {
         max-width: 1400px;
 
