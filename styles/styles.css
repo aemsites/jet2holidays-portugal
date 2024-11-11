@@ -13,7 +13,15 @@
 @import url('reset.css');
 
 :root {
-    /* colors */
+  /* colors */
+  --background-color: white;
+  --light-color: #f8f8f8;
+  --dark-color: #505050;
+  --text-color: #131313;
+  --link-color: #3b63fb;
+  --link-hover-color: #1d3ecf;
+  --blue-background-color: #388ce1;
+  --blue-background-text-color: white;
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -76,30 +84,30 @@
 }
 
 @media (width >= 900px) {
-    :root {
-        /* body sizes */
+  :root {
+    /* body sizes */
 
-        /* heading sizes */
-    }
+    /* heading sizes */
+  }
 }
 
 body {
-    display: none;
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.44;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: sans-serif;
-    font-weight: 900;
+  display: none;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.44;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
+  font-weight: 900;
 }
 
 body.appear {
-    display: block;
+  display: block;
 }
 
 header {
-    height: var(--nav-height);
+  height: var(--nav-height);
 }
 
 h1,
@@ -163,23 +171,57 @@ p, li {
 
 header .header,
 footer .footer {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {
-    visibility: visible;
+  visibility: visible;
 }
 
 main img {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* section metadata */
 main .section.light,
 main .section.highlight {
-    margin: 0;
-    padding: 40px 0;
+  margin: 0;
+  padding: 40px 0;
 }
+
+.blue-section {
+    padding: 20px;
+    background-color: var(--blue-background-color);
+    color: var(--blue-background-text-color);
+    text-align: center;
+
+    & h4 {
+        font-family: franklin-heavy-italic, sans-serif;
+        font-size: 1.625rem;
+        margin: 0;
+    }
+
+    & p {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 0 0 20px;
+        
+        & a {
+            color: var(--blue-background-text-color);
+            text-decoration: underline;
+            font-style: italic;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+}
+
+@media (width >= 1200px) {
+    .blue-section {
+        text-align: left;
+        padding: 40px;
+    }
+  }
