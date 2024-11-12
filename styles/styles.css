@@ -14,14 +14,17 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-  --blue-background-color: #388ce1;
-  --blue-background-text-color: white;
+    --background-color: white;
+    --light-color: #f8f8f8;
+    --dark-color: #505050;
+    --text-color: #131313;
+    --link-color: #3b63fb;
+    --link-hover-color: #1d3ecf;
+    --blue-background-color: #388ce1;
+    --blue-background-text-color: white;
+    --body-color: #E9EBEE;
+    --section-heading-with-link-color: #525F6AFF;
+
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -92,14 +95,15 @@
 }
 
 body {
-  display: none;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.44;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: sans-serif;
-  font-weight: 900;
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.44;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+    font-weight: 900;
+    background: var(--body-color);
 }
 
 body.appear {
@@ -209,7 +213,7 @@ main .section.highlight {
         font-weight: 300;
         font-size: 1rem;
         margin: 0 0 20px;
-        
+
         & a {
             color: var(--blue-background-text-color);
             text-decoration: underline;
