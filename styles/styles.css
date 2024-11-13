@@ -22,7 +22,9 @@
   --link-hover-color: #1d3ecf;
   --blue-background-color: #388ce1;
   --blue-background-text-color: white;
-
+  --footer-background-color: #203240;
+  --footer-text-color: #fff;
+  
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
     --heading-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
