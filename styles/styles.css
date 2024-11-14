@@ -85,7 +85,7 @@
     size-adjust: 98.74%;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   :root {
     /* body sizes */
 
@@ -221,7 +221,7 @@ main .section.highlight {
     }
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
     .blue-section {
         text-align: left;
         padding: 40px;
