@@ -1,6 +1,5 @@
 .contact-us-container .contact-us-wrapper {
     max-width: unset;
-    padding: 0;
     background-color: var(--footer-background-color);
     padding: 24px 12px 48px;
 }
@@ -149,7 +148,6 @@
 
 @media (width >= 900px) {
     .contact-us.block {
-
         .flex-item {
             & ul {
                 margin-left: 10px;
