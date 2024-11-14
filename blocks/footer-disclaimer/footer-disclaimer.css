@@ -1,10 +1,10 @@
-.contact-us-links-container .contact-us-links-wrapper {
+.footer-disclaimer-container .footer-disclaimer-wrapper {
     max-width: unset;
     padding: 0;
     background-color: var(--footer-background-color);
 }
 
-.contact-us-links.block {
+.footer-disclaimer.block {
     --button-background-color: #0f61e6;
     --font-familly: 'Open Sans', arial, sans-serif;
 
@@ -81,7 +81,7 @@
 }
 
 @media (width >= 600px) {
-    .contact-us-links.block {
+    .footer-disclaimer.block {
         display: flex;
         flex-wrap: wrap;
 
@@ -99,7 +99,7 @@
 }
 
 @media (width >= 1200px) {
-    .contact-us-links.block {
+    .footer-disclaimer.block {
         display: block;
         flex-wrap: inherit;
         max-width: 1400px;
