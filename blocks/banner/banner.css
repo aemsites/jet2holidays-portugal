@@ -1,7 +1,7 @@
 .banner-container .banner-wrapper {
-    max-width: 1500px;
-    padding: 0;
-    max-height: 500px;
+    max-width: unset;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .banner.block {
@@ -15,6 +15,8 @@
 
     position: relative;
     padding: 10px 0;
+    padding-left: 15px;
+    padding-right: 15px;
     min-height: 300px;
     font-size: 1em;
     max-width: 1400px;
@@ -22,12 +24,16 @@
 
     & .head {
         position: relative;
+        padding: 12px 12px 36px;
+        max-height: 150px;
 
         & h2 {
             font-family: var(--banner-heading-font-family);
             font-weight: 300;
             margin-bottom: 10px;
             margin-top: 0;
+            font-size: 28px;
+            line-height: 28px;
 
             & strong {
                 font-weight: 600;
@@ -57,16 +63,15 @@
         }
 
         p {
-            text-align: left;
-            font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             font-family: var(--banner-paragraph-font-family);
+            text-align: center;
+            font-size: 14px;
             margin-bottom: 20px;
-            margin-top: 20px;
-            max-width: 670px;
 
             & em {
                 font-style: italic;
+                font-weight: 600;
             }
         }
     }
@@ -79,7 +84,8 @@
         font-family:  var(--banner-paragraph-font-family);
         font-size: .875rem;
         line-height: 1.44;
-        font-weight: bold;
+        font-weight: 400;
+        text-align: center;
     }
 
     img {
@@ -107,24 +113,43 @@
     .banner.block {
         position: relative;
         padding: 40px 24px;
-        min-height: 300px;
         font-size: 1em;
 
         & .head {
             position: inherit;
+            max-height: unset;
+            padding: unset;
+
+            & h2 {
+                font-size: 50px;
+                line-height: 50px;
+            }
         }
 
         & .content {
+            text-align: left;
+            max-width: 600px;
+
             & .button {
                 display: inline-block;
             }
+            
+            & p {
+                text-align: left;
+                font-weight: 600;
+            }
         }
+
+        & a {
+            text-align: left;
+        }
+
+
     }
 
     .banner-container .banner-wrapper {
-        max-width: 1500px;
-        padding: 0;
         max-height: 500px;
+        
     }
 
 }
