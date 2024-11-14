@@ -14,8 +14,8 @@
         text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
         font-size: 28px;
         font-family: var(----heading-font-family);
-        font-style: italic;
         font-weight: 900;
+        font-style: italic;
         line-height: 1;
     }
 
@@ -98,8 +98,8 @@
         & .title {
             text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
             font-family: var(----heading-font-family);
-            font-style: italic;
             font-weight: 900;
+            font-style: italic;
             line-height: 1;
             font-size: 1.7em;
         }
