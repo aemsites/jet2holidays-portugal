@@ -7,13 +7,15 @@
 .hero.block {
     position: relative;
     padding: 10px 0;
-    min-height: 300px;
     color: white;
     font-size: 1em;
 
     & .title {
-        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);        font-size: 28px;
-        font-family: franklin-heavy-italic, sans-serif;
+        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
+        font-size: 28px;
+        font-family: var(----heading-font-family);
+        font-style: italic;
+        font-weight: 900;
         line-height: 1;
     }
 
@@ -85,7 +87,7 @@
     }
 }
 
-@media (width >=900px) {
+@media (width >= 900px) {
     .hero.block {
         position: relative;
         padding: 40px 24px;
@@ -95,9 +97,11 @@
 
         & .title {
             text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-            font-family: franklin-heavy-italic, sans-serif;
+            font-family: var(----heading-font-family);
+            font-style: italic;
+            font-weight: 900;
             line-height: 1;
-            font-size: 1.5em;
+            font-size: 1.7em;
         }
 
         & .grid-container {
@@ -141,37 +145,6 @@
         max-width: unset;
         padding: 0;
         max-height: 500px;
-    }
-
-    .hero {
-        position: relative;
-        padding: 40px 24px;
-        min-height: 300px;
-        color: white;
-        font-size: 1em;
-    }
-
-    .hero .grid-container .column .discount-circle-size {
-        width: 160px;
-        height: 160px;
-        padding-top: 14px;
-        font-size: 18px !important;
-    }
-
-    .hero .discount {
-        font-size: 28px;
-    }
-
-
-    .hero .hero-text {
-        text-shadow: 1px 3px 4px rgba(0 0 0 / 30%);
-        font-size: 2em !important;
-        font-family: franklin-heavy-italic, sans-serif;
-        line-height: 1;
-    }
-
-    .hero .grid-container .column .tandc {
-        font-size: 10px;
     }
 
 }
