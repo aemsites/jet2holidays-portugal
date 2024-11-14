@@ -13,15 +13,20 @@
 @import url('reset.css');
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-  --blue-background-color: #388ce1;
-  --blue-background-text-color: white;
+    /* colors */
+    --background-color: white;
+    --light-color: #fff;
+    --dark-color: #505050;
+    --text-color: #131313;
+    --link-color: #3b63fb;
+    --link-hover-color: #1d3ecf;
+    --blue-background-color: #388ce1;
+    --blue-background-text-color: white;
+    --footer-links-background-color: #2b6fb1;
+    --text-shadow-color: #666;
+    --card-border-color: #dadada;
+    --body-color: #E9EBEE;
+    --section-heading-with-link-color: #525F6AFF;
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -83,7 +88,7 @@
     size-adjust: 98.74%;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   :root {
     /* body sizes */
 
@@ -92,14 +97,15 @@
 }
 
 body {
-  display: none;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.44;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: sans-serif;
-  font-weight: 900;
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.44;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+    font-weight: 900;
+    background: var(--body-color);
 }
 
 body.appear {
@@ -209,7 +215,7 @@ main .section.highlight {
         font-weight: 300;
         font-size: 1rem;
         margin: 0 0 20px;
-        
+
         & a {
             color: var(--blue-background-text-color);
             text-decoration: underline;
@@ -219,7 +225,7 @@ main .section.highlight {
     }
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
     .blue-section {
         text-align: left;
         padding: 40px;
