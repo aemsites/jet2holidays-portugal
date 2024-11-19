@@ -116,7 +116,7 @@
                 flex-direction: row;
                 align-items: center;
                 gap: 8px;
-                background-color: #101828;
+                background-color: #203240;
                 color: #fff;
                 font-size: 14px;
                 line-height: 24px;
@@ -132,6 +132,10 @@
                     height: 20px;
                     width: auto;
                 }
+            }
+
+            & p:has(.icon-person):hover {
+                background-color: #101828;
             }
         }
 
