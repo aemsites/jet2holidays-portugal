@@ -38,6 +38,10 @@
                 height: 16px;
                 width: auto;
             }
+
+            & .icon-arrow-down {
+                display: none;
+            }
         }
 
         & picture {
@@ -129,6 +133,13 @@
 
                 & .icon-person {
                     filter: invert(96%) sepia(4%) saturate(650%) hue-rotate(209deg) brightness(104%) contrast(104%);
+                    height: 20px;
+                    width: auto;
+                }
+
+                & .icon-arrow-down {
+                    display: block;
+                    stroke: invert(96%) sepia(4%) saturate(650%) hue-rotate(209deg) brightness(104%) contrast(104%);
                     height: 20px;
                     width: auto;
                 }
