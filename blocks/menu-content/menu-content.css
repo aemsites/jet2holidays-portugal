@@ -38,7 +38,7 @@
 
                 & a {
                     & .icon {
-                        & .img {
+                        & img {
                             height: min(7.5vw, 1000px);
                             width: min(7.5vw, 1000px);
                         }
