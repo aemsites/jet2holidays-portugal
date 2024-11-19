@@ -36,10 +36,12 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
 
-                & .icon {
-                    & .img {
-                        height: min(7.5vw, 1000px);
-                        width: min(7.5vw, 1000px);
+                & a {
+                    & .icon {
+                        & .img {
+                            height: min(7.5vw, 1000px);
+                            width: min(7.5vw, 1000px);
+                        }
                     }
                 }
             }
