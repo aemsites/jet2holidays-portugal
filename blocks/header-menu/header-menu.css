@@ -135,6 +135,7 @@
             }
 
             & p:has(.icon-person):hover {
+                cursor: pointer;
                 background-color: #101828;
             }
         }
