@@ -164,7 +164,7 @@
     }
 }
 
-@media (width >=700px) {
+@media (width >= 700px) {
     .menu-content.block {
         display: flex;
         gap: 12px;
@@ -217,6 +217,7 @@
                 }
 
                 & .button-container {
+                    margin: 0;
                     display: block;
                     text-align: center;
                 }

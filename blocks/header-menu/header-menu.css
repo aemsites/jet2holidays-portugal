@@ -156,11 +156,11 @@
         & .flex-item {
             & picture {
                 width: auto;
-                height: 65px;
+                height: 85px;
 
                 & img {
                     width: auto;
-                    height: 65px;
+                    height: 85px;
                 }
             }
         }
