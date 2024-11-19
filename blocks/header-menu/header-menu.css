@@ -1,0 +1,184 @@
+.header-menu-container .header-menu-wrapper {
+    max-width: unset;
+    padding: 0;
+}
+
+.header-menu.block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 12px;
+    
+    --header-font-familly: 'Open Sans', arial, sans-serif;
+
+    & .icon-menu {
+        & img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    & .flex-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        & p {
+            display: flex;
+            flex-direction: column;
+            color: #3d8ede;
+            font-family: var(--header-font-familly);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            align-items: center;
+
+            & .icon-person {
+                filter: invert(65%) sepia(32%) saturate(6999%) hue-rotate(187deg) brightness(90%) contrast(92%);
+                height: 16px;
+                width: auto;
+            }
+
+            & .icon-arrow-down {
+                display: none;
+            }
+        }
+
+        & picture {
+            width: auto;
+            height: 40px;
+
+            & img {
+                width: auto;
+                height: 40px;
+            }
+        }
+    }
+
+    & .sign-in-content.block.open {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        background-color: #fff;
+    }
+
+    & .menu-content.block.open {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: #fff;
+    }
+
+}
+
+@media (width >=700px) {
+    .header-menu.block {
+        align-items: start;
+        padding: 0 12px;
+        min-height: 85px;
+        gap: 12px;
+
+
+        & .sign-in-content.block.open {
+            display: block;
+            left:unset;
+            right: 0;
+            top: calc(100% - 5px);
+            box-shadow: 0 4px 4px -2px #10182808, 0 12px 16px -4px #10182814;
+            width: 375px;
+            height: 540px;
+            z-index: 100;
+            border-radius: 4px;
+            background-color: #fff;
+            outline: 1px solid #eaecf0;
+        }
+
+        & .flex-item {
+            & p:has(.icon-menu) {
+                display: none;
+            }
+
+            & picture {
+                width: auto;
+                height: 50px;
+    
+                & img {
+                    width: auto;
+                    height: 50px;
+                }
+            }
+
+            & p:has(.icon-person) {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+                background-color: #203240;
+                color: #fff;
+                font-size: 14px;
+                line-height: 24px;
+                border: none;
+                padding: 8px 14px;
+                box-sizing: border-box;
+                font-family: var(--header-font-familly);
+                font-weight: 600;
+                border-radius: 100px;
+
+                & .icon-person {
+                    filter: invert(96%) sepia(4%) saturate(650%) hue-rotate(209deg) brightness(104%) contrast(104%);
+                    height: 20px;
+                    width: auto;
+                }
+
+                & .icon-arrow-down {
+                    display: block;
+                    stroke: invert(96%) sepia(4%) saturate(650%) hue-rotate(209deg) brightness(104%) contrast(104%);
+                    height: 20px;
+                    width: auto;
+                }
+            }
+
+            & p:has(.icon-person):hover {
+                cursor: pointer;
+                background-color: #101828;
+            }
+        }
+
+        & .flex-item:first-child {
+            flex: 1 0 20%;
+        }
+    }
+}
+
+@media (width >= 900px) {
+    .header-menu-container .header-menu-wrapper {
+        max-width: unset;
+        padding: 12px 0 0;
+    }
+
+    .header-menu.block {
+        align-items: center;
+        padding:0 24px;
+        max-width: 1400px;
+        margin: auto;
+
+        & .flex-item {
+            & picture {
+                width: auto;
+                height: 85px;
+
+                & img {
+                    width: auto;
+                    height: 85px;
+                }
+            }
+        }
+    }
+}
