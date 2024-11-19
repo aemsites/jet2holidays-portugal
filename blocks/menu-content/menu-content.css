@@ -1,12 +1,5 @@
 .menu-content.block {
     display: none;
-
-    & .icon {
-        & .img {
-            height: min(7.5vw, 1000px);
-            width: min(7.5vw, 1000px);
-        }
-    }
     
     & .menu-open-item {
         padding: 5px;
@@ -42,6 +35,13 @@
             & p {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
+
+                & .icon {
+                    & .img {
+                        height: min(7.5vw, 1000px);
+                        width: min(7.5vw, 1000px);
+                    }
+                }
             }
         }
 
