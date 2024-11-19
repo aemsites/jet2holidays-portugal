@@ -236,6 +236,20 @@
         gap: 12px;
         justify-content: space-between;
 
+        & .icon-abta-color {
+            & img {
+                height: 35px;
+                width: auto;
+            }
+        }
+        
+        & .icon-atol-header {
+            & img {
+                height: 35px;
+                width: auto;
+            }
+        }
+        
         & .menu-open-item,
         .menu-open-item:first-child,
         .menu-open-item:last-child {
