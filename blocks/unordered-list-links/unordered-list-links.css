@@ -19,3 +19,11 @@
         font-weight: 400;
     }
 }
+
+@media (min-width:  600px) {
+    .unordered-list-links {
+        .links-list {
+            justify-content: flex-start;
+        }
+    }
+}
