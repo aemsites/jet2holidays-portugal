@@ -1,0 +1,114 @@
+.sign-in-content.block {
+    display: none;
+
+    & .icon-jetlogo {
+        width: 90px;
+        height: auto;
+    }
+
+    & .sign-in-item {
+        padding: 16px;
+
+        & p {
+            align-items: flex-start;
+
+            & sup {
+                border: 1px solid #b2ddff;
+                border-radius: 100px;
+                padding: 2px 10px;
+                background-color: #eff8ff;
+                font-size: 14px;
+                white-space: nowrap;
+                font-weight: 600;
+                color: #175cd3;
+                margin-left: 8px;
+                line-height: 20px;
+            }
+        }
+
+        & p:has(> .icon-jetlogo + .icon-cancel) {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            & .icon-cancel {
+                height: 12px;
+                width: 12px;
+            }
+        }
+
+        & .button {
+            background-color: #203240;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0;
+            transition: all .3s cubic-bezier(1, 0, 0, 1);
+            display: inline-block;
+            padding: 16px 12px;
+            font-family: 'Open Sans', arial, sans-serif;
+            line-height: 20px;
+            border-radius: 4px;
+        }
+
+        & .button:has(> .icon) {
+            background: none;
+            color: #203240;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            position: relative;
+            line-height: 1.2;
+            font-family: 'Open Sans', arial, sans-serif;
+            gap: 12px;
+            margin: 0;
+        }
+    }
+
+    & .sign-in-item:not(:last-child) {
+        border-bottom: 1px solid #d0d5dd;
+    }
+
+    & .sign-in-item:last-child {
+        & .button {
+            font-weight: 400;
+        }
+    }
+
+    & .icon {
+        margin-top: 0;
+    }
+
+}
+
+
+@media (width >= 700px) {
+    .sign-in-content.block {    
+        & .sign-in-item {
+            padding: 8px 0;
+
+            & .button {
+                display: block;
+                width: 100%;
+            }
+
+            & .button:has(> .icon) {
+                padding:12px 16px;
+            }
+        }
+
+        & .sign-in-item:first-child {
+            padding: 16px;
+
+            .icon-cancel {
+                display: none;
+            }
+        }
+
+        & .sign-in-item:last-child {
+            & .button {
+                font-weight: 400;
+            }
+        }
+    }
+}
