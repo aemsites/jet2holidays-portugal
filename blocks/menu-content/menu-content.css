@@ -36,6 +36,13 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
             }
+
+            & .icon {
+                & .img {
+                    height: min(7.5vw, 1000px);
+                    width: min(7.5vw, 1000px);
+                }
+            }
         }
 
         & p:has(> .icon-abta-color + .icon-atol-header) {
@@ -249,7 +256,7 @@
                 width: auto;
             }
         }
-        
+
         & .menu-open-item,
         .menu-open-item:first-child,
         .menu-open-item:last-child {
