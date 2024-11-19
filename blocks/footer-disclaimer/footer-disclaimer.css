@@ -53,6 +53,11 @@
         & li {
             display: inline-block;
         }
+
+        & li:has(a):not(:last-child) {
+            border-right: 1px solid;
+            padding-right: 6px;
+        }
     }
 
 
