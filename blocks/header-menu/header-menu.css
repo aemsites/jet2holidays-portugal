@@ -11,6 +11,13 @@
     
     --header-font-familly: 'Open Sans', arial, sans-serif;
 
+    & .icon-menu {
+        & img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
     & .flex-item {
         display: flex;
         flex-direction: column;
