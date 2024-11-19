@@ -1,0 +1,21 @@
+.unordered-list-links {
+    .links-list {
+        list-style: none;
+        display: flex;
+        margin: 14px 0;
+        padding-bottom: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .list-item > a {
+        color: #0f61e6;
+        font-weight: 400;
+    }
+
+    .list-item:not(:last-child)::after {
+        content: "|";
+        padding: 0 12px;
+        font-weight: 400;
+    }
+}
