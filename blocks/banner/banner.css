@@ -1,0 +1,155 @@
+.banner-container .banner-wrapper {
+    max-width: unset;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.banner.block {
+    --banner-heading-font-family: 'Oswald', sans-serif;
+    --banner-paragraph-font-family: 'Open Sans', sans-serif;
+    --banner-button-font-family: 'Open Sans', arial, sans-serif;
+    --banner-button-font-color: #203240;
+    --banner-button-background-color: #fdb900;
+    --banner-button-border-color: #ca9400;
+    --banner-link-font-color: #000;
+
+    position: relative;
+    padding: 10px 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 300px;
+    font-size: 1em;
+    max-width: 1400px;
+    margin: auto;
+
+    & .head {
+        position: relative;
+        padding: 12px 12px 36px;
+        max-height: 150px;
+
+        & h2 {
+            font-family: var(--banner-heading-font-family);
+            font-weight: 300;
+            margin-bottom: 10px;
+            margin-top: 0;
+            font-size: 28px;
+            line-height: 28px;
+
+            & strong {
+                font-weight: 600;
+             }
+            }
+    }
+
+    & .content {
+        max-width: 800px;
+
+        & .button {
+            display: block;
+            background-color: var(--banner-button-background-color);
+            color: var(--banner-button-font-color);
+            border-bottom: 4px solid var(--banner-button-border-color);
+            padding: 16px 12px;
+            font-family: var(--banner-button-font-family);
+            font-size: 20px;
+            line-height: 20px;
+            transition: background-color .2s linear;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 25px;
+        }
+
+        p {
+            font-weight: 400;
+            font-family: var(--banner-paragraph-font-family);
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+
+            & em {
+                font-style: italic;
+                font-weight: 600;
+            }
+        }
+    }
+
+
+    a {
+        display: block;
+        color: var(--banner-link-font-color);
+        text-decoration: underline;
+        font-family:  var(--banner-paragraph-font-family);
+        font-size: .875rem;
+        line-height: 1.44;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    img {
+        object-fit: cover;
+        object-position: 50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    picture {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        object-fit: cover;
+        object-position: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+}
+
+@media (width >=600px) {
+    .banner.block {
+        position: relative;
+        padding: 40px 24px;
+        font-size: 1em;
+
+        & .head {
+            position: inherit;
+            max-height: unset;
+            padding: unset;
+
+            & h2 {
+                font-size: 50px;
+                line-height: 50px;
+            }
+        }
+
+        & .content {
+            text-align: left;
+            max-width: 600px;
+
+            & .button {
+                display: inline-block;
+            }
+            
+            & p {
+                text-align: left;
+                font-weight: 600;
+            }
+        }
+
+        & a {
+            text-align: left;
+        }
+
+
+    }
+
+    .banner-container .banner-wrapper {
+        max-height: 500px;
+        
+    }
+
+}
