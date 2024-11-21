@@ -86,7 +86,8 @@
         background-color: #388ce1;
     }
 }
-@media (width >= 600px) {
+
+@media (min-width: 600px) {
     .hero.block {
         padding: 40px 24px;
         min-height: 300px;
@@ -135,9 +136,8 @@
 
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
     .hero.block {
-
         & .title {
             font-size: 1.65em;
         }
