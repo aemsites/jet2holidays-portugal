@@ -1,0 +1,129 @@
+.footer-disclaimer-container .footer-disclaimer-wrapper {
+    max-width: unset;
+    padding: 0;
+    background-color: var(--footer-background-color);
+}
+
+.footer-disclaimer.block {
+    --button-background-color: #0f61e6;
+    --font-familly: 'Open Sans', arial, sans-serif;
+
+    max-width: 90%;
+    margin: auto;
+    color: var(--footer-text-color);
+
+    & .flex-item {
+        padding: 10px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    & div:has( > picture) {
+        height: 44px;
+        width: auto;
+        display: inline-block;
+        margin: auto;
+    }
+
+    & div {
+        & picture {
+            & img {
+                height: 44px;
+                width: auto;
+            }
+        }
+    }
+
+    & .icon-payment-logos {
+        & img {
+            height: 31px;
+            width: auto;
+        }
+    }
+
+
+
+    & .icon-atol-logo, .icon-abta-logo {
+        & img {
+            height: 34px;
+            width: auto;
+        }
+    }
+
+    & ul {
+        & li {
+            display: inline-block;
+        }
+
+        & li:has(a):not(:last-child) {
+            border-right: 1px solid;
+            padding-right: 6px;
+        }
+    }
+
+
+
+    & a {
+        color: var(--footer-text-color);
+        text-decoration: underline;
+    }
+
+    & sub {
+        font-size: 12px;
+    }
+
+    & strong {
+        font-weight: 600;
+    }
+
+    & p {
+        font-family: var(--font-familly);
+        font-weight: 400;
+        margin-top: 3px;
+        font-size: .875rem;
+        -webkit-font-smoothing: antialiased;
+    }
+
+}
+
+@media (width >= 600px) {
+    .footer-disclaimer.block {
+        display: flex;
+        flex-wrap: wrap;
+
+        & .flex-item:first-child {
+            flex: 1 1 100%;
+        }
+
+        & .flex-item:not(:first-child) {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+}
+
+@media (width >= 1200px) {
+    .footer-disclaimer.block {
+        display: block;
+        flex-wrap: inherit;
+        max-width: 1400px;
+        padding: 20px;
+
+        & .flex-item {
+            display: inline-block;
+            flex: none;
+        }
+
+        & .flex-item:first-child {
+            max-width: 45%;
+        }
+
+
+        & .flex-item:not(:first-child) {
+            flex: none;
+            display: inline-block;
+        }
+
+    }
+}
