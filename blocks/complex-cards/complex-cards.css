@@ -1,14 +1,15 @@
-.featured-resort-cards {
+.complex-cards {
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: 100%;
     padding: 0 15px;
 
-    .resorts-grid-section {
+    .cards-grid-section {
         list-style: none;
         margin: 0;
+        padding: 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1400px;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 12px;
 
         .main-resort-card {
             width: 100%;
@@ -20,6 +21,8 @@
             position: relative;
 
             & img {
+                width: 100%;
+                height: auto;
                 display: block;
                 object-fit: cover;
             }
@@ -28,6 +31,7 @@
         .resort-card-subsection {
             border: 1px solid #d1d3d6;
             height: 100%;
+            background: var(--light-color);
         }
 
         .resort-details {
@@ -90,50 +94,43 @@
         }
 
         .map-pin-icon {
-            width: 11px;
-            height: 11px;
+            width: 11px !important;
+            height: 11px !important;
         }
 
         .chevron-right {
-            width: 6px;
-            height: 6px;
+            width: 6px !important;
+            height: 6px !important;
             margin-left: 6px;
         }
     }
 }
 
-
+/* Medium screens (min-width: 600px) */
 @media (min-width: 600px) {
-    .featured-resort-cards {
-        .resorts-grid-section {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
+    .complex-cards {
+        .cards-grid-section {
+            grid-template-columns: repeat(2, 1fr);
             column-gap: 12px;
             max-width: 100%;
-        }
 
-        & img {
-            width: 100%;
-            height: 220px;
-            aspect-ratio: auto;
+            .main-resort-card img {
+                height: 220px;
+                aspect-ratio: auto;
+            }
         }
     }
 }
 
+/* Large screens (min-width: 900px) */
 @media (min-width: 900px) {
-    .featured-resort-cards {
-        .resorts-grid-section {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+    .complex-cards {
+        max-width: 1400px;
+
+        .cards-grid-section {
+            grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, auto);
             column-gap: 12px;
-            max-width: 100%;
         }
     }
 }

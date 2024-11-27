@@ -88,14 +88,6 @@
     size-adjust: 98.74%;
 }
 
-@media (min-width: 900px) {
-  :root {
-    /* body sizes */
-
-    /* heading sizes */
-  }
-}
-
 body {
     display: none;
     margin: 0;
@@ -198,6 +190,50 @@ main .section.highlight {
   padding: 40px 0;
 }
 
+.complex-cards .see-all-button, .simple-cards .see-all-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25em;
+    margin-top: 4px;
+
+    & > a:nth-of-type(1) {
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        font-style: normal;
+        color: var(--section-heading-with-link-color);
+        text-decoration: none;
+    }
+
+    & > a:nth-of-type(2) {
+        display: flex;
+        margin-left: 24px;
+        padding: 1.0714em 1.4285em;
+        background: var(--light-color);
+        font-size: 0.8125em;
+        font-family: Franklin, sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        column-gap: 8px;
+
+        & span {
+            display: inline-block;
+        }
+
+        & img {
+            width: 6px;
+            height: 10px;
+            vertical-align: middle;
+        }
+    }
+
+    & > a:nth-of-type(1):hover {
+        text-decoration: underline;
+    }
+}
+
 .blue-section {
     padding: 20px;
     background-color: var(--blue-background-color);
@@ -216,12 +252,28 @@ main .section.highlight {
         font-size: 1rem;
         margin: 0 0 20px;
 
+        /* stylelint-disable-next-line no-descending-specificity */
         & a {
             color: var(--blue-background-text-color);
             text-decoration: underline;
             font-style: italic;
             font-family: 'Open Sans', sans-serif;
         }
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        /* body sizes */
+
+        /* heading sizes */
+    }
+
+    .complex-cards .see-all-button, .simple-cards .see-all-button {
+        margin: 0 auto 1.25em;
+        max-width: 1400px;
+        padding: 0 20px;
+        justify-content: start;
     }
 }
 
