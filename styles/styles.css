@@ -15,6 +15,7 @@
 :root {
     /* colors */
     --background-color: white;
+    --background-dark-color: #E9EBEE;
     --light-color: #fff;
     --dark-color: #505050;
     --text-color: #131313;
@@ -27,6 +28,8 @@
     --card-border-color: #dadada;
     --body-color: #E9EBEE;
     --section-heading-with-link-color: #525F6AFF;
+    --resort-link-color: #0f61e6;
+
 
     /* fonts */
     --body-font-family: 'Franklin', 'Franklin Fallback', sans-serif;
@@ -88,24 +91,16 @@
     size-adjust: 98.74%;
 }
 
-@media (min-width: 900px) {
-  :root {
-    /* body sizes */
-
-    /* heading sizes */
-  }
-}
-
 body {
-    display: none;
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.44;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: sans-serif;
-    font-weight: 900;
-    background: var(--body-color);
+  display: none;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.44;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
+  font-weight: 900;
+  background: var(--background-dark-color);
 }
 
 body.appear {
@@ -222,6 +217,31 @@ main .section.highlight {
             font-style: italic;
             font-family: 'Open Sans', sans-serif;
         }
+    }
+}
+
+.page-description-section {
+    display: flex;
+    flex-direction: column;
+    padding: 21px 0 42px;
+}
+
+@media (min-width: 600px) {
+    .page-description-section {
+        display: grid;
+        grid-template-columns: 66.67% 33.33%;
+        gap: 12px;
+        padding: 21px 20px 42px;
+        margin: 0 auto;
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        /* body sizes */
+
+        /* heading sizes */
     }
 }
 

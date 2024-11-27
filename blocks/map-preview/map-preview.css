@@ -1,0 +1,80 @@
+.map-preview {
+    .main-container {
+        width: 100%;
+    }
+
+    .preview-container {
+        margin: 0;
+        position: relative;
+        border-bottom: 3px solid #fff;
+        border-top: 3px solid #fff;
+    }
+
+    .image-container {
+        overflow: hidden;
+        max-height: 65px;
+        width: 100%;
+    }
+
+    .map-image {
+        display: block;
+        width: 100%;
+    }
+
+    .call-to-action {
+        position: absolute;
+        top: -24px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .button-pin {
+        position: relative;
+        background-color: #FDB900;
+        border-radius: 5px;
+        border: 2px solid #F48D00;
+        font-size: 22px;
+        display: inline-block;
+        padding: 0.5454em 0.7272em;
+        font-family: Franklin, sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        color: #203240;
+    }
+
+    .button-pin::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: #F48D00;
+        pointer-events: none;
+        margin-left: -10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .map-preview {
+        .main-container {
+            max-height: 430px;
+        }
+
+        .preview-container {
+            border: 3px solid #fff;
+            outline: 1px solid #d1d3d6;
+        }
+
+        .call-to-action {
+            top: 50%;
+            margin-top: -30px;
+        }
+
+        .image-container {
+            max-height: 430px;
+        }
+
+    }
+}
