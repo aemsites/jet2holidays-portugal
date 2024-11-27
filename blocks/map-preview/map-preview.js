@@ -5,11 +5,12 @@ import {
 export default async function decorate(block) {
   const dom = domEl('div', { class: 'main-container' });
   const callToActionText = block.children[0].querySelector('p');
+  const mapLink = callToActionText.querySelector('a').href;
   const mapImage = block.children[0].querySelector('img');
   mapImage.classList.add('map-image');
 
   const mapPreview = a(
-    { href: '#', class: 'preview-link' },
+    { href: mapLink, class: 'preview-link' },
     div(
       { class: 'preview-container' },
       div(

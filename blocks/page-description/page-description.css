@@ -15,6 +15,10 @@
             color: #525f6a;
         }
 
+        & h1 {
+            margin-bottom: 18px;
+        }
+
         & h2 {
             margin-top: 30px
         }
@@ -35,7 +39,7 @@
     }
 
     .list-item > a {
-        color: #0f61e6;
+        color: var(--resort-link-color);
         font-weight: 400;
     }
 
