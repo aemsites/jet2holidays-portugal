@@ -3,15 +3,26 @@ import {
 } from '../../scripts/dom-helpers.js';
 
 export default async function decorate(block) {
-  const dom = domEl('ul');
-  dom.className = 'resorts-grid-section';
+  const dom = domEl('div', { class: 'complex-cards-container' });
 
-  const mapPinPath = '../../icons/mapPin.svg';
-  const chevronRight = '../../icons/chevronRight.svg';
+  const mapPinPath = '../../icons/map-pin.svg';
+  const chevronRight = '../../icons/chevron-right.svg';
+
+  const containsButton = block.children[0].querySelectorAll('div').length === 1;
+  if (containsButton) {
+    const seeAllButton = domEl('div', { class: 'see-all-button' });
+    const buttonContents = block.children[0].querySelector('div').querySelector('p');
+    [...buttonContents.children].forEach((child) => {
+      seeAllButton.append(child);
+    });
+    dom.append(seeAllButton);
+  }
+
+  const cardsList = domEl('ul', { class: 'cards-grid-section' });
 
   [...block.children].forEach((row, index) => {
-    // skip the first element, which is used to inform the authors the column structure
-    if (index === 0) {
+    /* Skip first row if the seeAllButton is present */
+    if (index === 0 && containsButton) {
       return;
     }
 
@@ -22,6 +33,11 @@ export default async function decorate(block) {
       href: resortLink,
       title: resortTitle,
     } = row.children[1].querySelector('h4').querySelector('a');
+
+    const cardLocation = row.children[1].querySelector('p') ? row.children[1].querySelector('p') : '';
+    if (cardLocation !== '') {
+      cardLocation.className = 'card-location';
+    }
 
     const {
       href: viewMapLink,
@@ -46,6 +62,7 @@ export default async function decorate(block) {
               { class: 'resort-title' },
               a({ href: resortLink }, resortTitle),
             ),
+            p(cardLocation),
             p(resortDescription),
           ),
         ),
@@ -68,8 +85,9 @@ export default async function decorate(block) {
       ),
     );
 
-    dom.append(il);
+    cardsList.append(il);
   });
 
+  dom.append(cardsList);
   block.replaceChildren(dom);
 }
