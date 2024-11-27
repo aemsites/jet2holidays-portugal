@@ -103,6 +103,12 @@
             height: 6px !important;
             margin-left: 6px;
         }
+
+        .card-location {
+            font-family: sans-serif;
+            font-weight: 700 !important;
+            margin-bottom: 1em !important;
+        }
     }
 }
 

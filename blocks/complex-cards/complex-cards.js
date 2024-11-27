@@ -34,6 +34,11 @@ export default async function decorate(block) {
       title: resortTitle,
     } = row.children[1].querySelector('h4').querySelector('a');
 
+    const cardLocation = row.children[1].querySelector('p') ? row.children[1].querySelector('p') : '';
+    if (cardLocation !== '') {
+      cardLocation.className = 'card-location';
+    }
+
     const {
       href: viewMapLink,
       title: viewMapTitle,
@@ -57,6 +62,7 @@ export default async function decorate(block) {
               { class: 'resort-title' },
               a({ href: resortLink }, resortTitle),
             ),
+            p(cardLocation),
             p(resortDescription),
           ),
         ),
