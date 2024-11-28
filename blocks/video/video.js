@@ -8,7 +8,7 @@ export default function decorate(block) {
   const videoUrl = `https://www.youtube.com/embed/${videoId}`;
 
   const videoIframe = iframe({
-    width: '100%', height: '420px', frameBorder: '0', src: videoUrl,
+    width: '100%', height: '420', frameBorder: '0', src: videoUrl, allowFullscreen: true, loaded: 'lazy',
   });
 
   const dom = domEl(
